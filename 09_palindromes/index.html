@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function palindromes(str) {
+        // Remove non-alphanumeric characters and convert to lowercase
+        let cleanedStr = "";
+        for (let i = 0; i < str.length; i++) {
+            let char = str[i];
+            if (/[a-z0-9]/i.test(char)) {
+            cleanedStr += char.toLowerCase();
+            }
+        }
+        // Compare the cleaned string with its reverse
+        return cleanedStr === cleanedStr.split('').reverse().join('');
+        }; 
+
+        console.log(`Is 'A car, a man, a maraca.' a palindrome? ` +
+            `${palindromes('A car, a man, a maraca.')}`);
+        
+        console.log(`Is 'ZZZZ car, a man, a maracaz.' a palindrome? ` +
+            `${palindromes('ZZZZ car, a man, a maracaz.')}`);
+    </script>
+</body>
+</html>
